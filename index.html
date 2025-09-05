@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1 2025 US Economic Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Q1 2025 US Economic Dashboard</h1>
+                <p class="header-subtitle">GDP Contraction, Tariff Policy & Trade Impact Analysis</p>
+                <div class="theme-toggle">
+                    <button id="theme-toggle" class="btn btn--outline btn--sm">🌙 Dark Mode</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Key Metrics Banner -->
+    <section class="metrics-banner">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value negative">-0.5%</div>
+                    <div class="metric-label">Q1 2025 GDP Growth</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value positive">+41.3%</div>
+                    <div class="metric-label">Import Growth (Q1)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value warning">27.0%</div>
+                    <div class="metric-label">Peak Tariff Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value negative">-$103B</div>
+                    <div class="metric-label">Peak Trade Deficit</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value warning">3.6%</div>
+                    <div class="metric-label">Peak Inflation Expect.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Tab Navigation -->
+            <nav class="tab-nav">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="gdp-analysis">GDP Analysis</button>
+                <button class="tab-btn" data-tab="tariff-impact">Tariff Impact</button>
+                <button class="tab-btn" data-tab="trade-flows">Trade Flows</button>
+                <button class="tab-btn" data-tab="inflation-trends">Inflation Trends</button>
+                <button class="tab-btn" data-tab="correlations">Correlations</button>
+            </nav>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Overview Tab -->
+                <div id="overview" class="tab-pane active">
+                    <div class="overview-grid">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Key Findings</h3>
+                                <ul class="findings-list">
+                                    <li><span class="finding-impact negative">Negative:</span> Q1 2025 GDP contracted 0.5% (first time in 3 years)</li>
+                                    <li><span class="finding-impact warning">Alert:</span> Import surge of 41.3% due to pre-tariff stockpiling</li>
+                                    <li><span class="finding-impact warning">High:</span> Average tariff rate increased from 2.5% to 27%</li>
+                                    <li><span class="finding-impact negative">Critical:</span> Trade deficit peaked at -$103B in March 2025</li>
+                                    <li><span class="finding-impact positive">Positive:</span> Manufacturing investment surged 21.9% in Q1</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>GDP Components Impact (Q1 2025)</h4>
+                            <canvas id="overviewChart"></canvas>
+                            <button class="export-btn" data-chart="overviewChart">Export PNG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GDP Analysis Tab -->
+                <div id="gdp-analysis" class="tab-pane">
+                    <div class="analysis-grid">
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>GDP Growth Trends</h4>
+                            <canvas id="gdpTrendChart"></canvas>
+                            <button class="export-btn" data-chart="gdpTrendChart">Export PNG</button>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>GDP Components Breakdown</h4>
+                            <canvas id="gdpComponentsChart"></canvas>
+                            <button class="export-btn" data-chart="gdpComponentsChart">Export PNG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tariff Impact Tab -->
+                <div id="tariff-impact" class="tab-pane">
+                    <div class="analysis-grid">
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>Tariff Timeline & Import Volume Response</h4>
+                            <canvas id="tariffTimelineChart"></canvas>
+                            <button class="export-btn" data-chart="tariffTimelineChart">Export PNG</button>
+                        </div>
+                        <div class="tariff-events">
+                            <h4>Key Tariff Events</h4>
+                            <div class="events-list">
+                                <div class="event-item">
+                                    <div class="event-date">Feb 1, 2025</div>
+                                    <div class="event-text">25% tariffs on Mexico/Canada, 20% on China</div>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">Mar 12, 2025</div>
+                                    <div class="event-text">25% steel/aluminum tariffs</div>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">Apr 5, 2025</div>
+                                    <div class="event-text">Universal 10% baseline tariff</div>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">Apr 9, 2025</div>
+                                    <div class="event-text">Country-specific reciprocal tariffs (up to 145% China)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trade Flows Tab -->
+                <div id="trade-flows" class="tab-pane">
+                    <div class="analysis-grid">
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>Trade Balance Trends</h4>
+                            <canvas id="tradeBalanceChart"></canvas>
+                            <button class="export-btn" data-chart="tradeBalanceChart">Export PNG</button>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>Import Growth Month-over-Month</h4>
+                            <canvas id="importGrowthChart"></canvas>
+                            <button class="export-btn" data-chart="importGrowthChart">Export PNG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inflation Trends Tab -->
+                <div id="inflation-trends" class="tab-pane">
+                    <div class="analysis-grid">
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>Consumer Expectations vs Actual Inflation</h4>
+                            <canvas id="inflationExpectationsChart"></canvas>
+                            <button class="export-btn" data-chart="inflationExpectationsChart">Export PNG</button>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>Inflation Components Comparison</h4>
+                            <canvas id="inflationComponentsChart"></canvas>
+                            <button class="export-btn" data-chart="inflationComponentsChart">Export PNG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Correlations Tab -->
+                <div id="correlations" class="tab-pane">
+                    <div class="correlations-grid">
+                        <div class="correlation-stats">
+                            <h4>Key Correlations</h4>
+                            <div class="correlation-item">
+                                <span class="correlation-label">Tariffs ↔ Imports:</span>
+                                <span class="correlation-value positive">+0.89</span>
+                            </div>
+                            <div class="correlation-item">
+                                <span class="correlation-label">Imports ↔ GDP:</span>
+                                <span class="correlation-value negative">-0.94</span>
+                            </div>
+                            <div class="correlation-item">
+                                <span class="correlation-label">Inflation Expectations ↔ CPI:</span>
+                                <span class="correlation-value positive">+0.73</span>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="position: relative; height: 400px;">
+                            <h4>Tariff Rate vs Import Volume Correlation</h4>
+                            <canvas id="correlationScatterChart"></canvas>
+                            <button class="export-btn" data-chart="correlationScatterChart">Export PNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <p>&copy; 2025 Economic Dashboard. Data sourced from BEA, BLS, and Census Bureau.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
